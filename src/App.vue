@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    
+    {{test}}
   </div>
 </template>
 
@@ -9,7 +9,16 @@
 
 export default {
   name: 'App',
-  
+  data(){
+    return{
+
+    }
+  },
+  computed: {
+    test () {
+      return this.$store.state.test
+    }
+  }
 }
 </script>
 
