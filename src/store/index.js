@@ -9,12 +9,15 @@ export default new Vuex.Store({
   state: {
     api: "https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json",
   },
-  mutations: {
-	},
   actions: {
-		Get ({ commit }) {
-      return new axios.get(state.api)
-    }
+		Get(context, url) {
+			context.commit('GetApi', url)
+		}
+	},
+	mutations: {
+		GetApi(state, url) {
+			return axios.get(state.api)
+		}
 	},
   modules: {
   }
