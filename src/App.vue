@@ -17,7 +17,7 @@ export default {
     loadHandler() {
       this.$store.dispatch('Get').then((res) => {
         res.data.forEach(el => {
-          data.push(el);
+          this.data.push(el);
         });
       })
     }
