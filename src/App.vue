@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     {{test}}
-    <input type="text" v-model="test">
+    <input type="text" v-model="test_local">
     <button @click="changeHandler()"> 修改 </button>
   </div>
 </template>
@@ -12,12 +12,12 @@ export default {
   name: 'App',
   data(){
     return{
-      test:""
+      test_local:""
     }
   },
   methods:{
     changeHandler() {
-      this.$store.dispatch('updateTest',test)
+      this.$store.dispatch('updateTest',test_local)
     }
   },
   computed: {
