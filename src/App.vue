@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
     {{test}}
+
+    <button @click="changeHandler()"> 修改 </button>
   </div>
 </template>
 
@@ -12,6 +13,11 @@ export default {
   data(){
     return{
 
+    }
+  },
+  methods:{
+    changeHandler() {
+      this.$store.dispatch('updateTest','balabala')
     }
   },
   computed: {
