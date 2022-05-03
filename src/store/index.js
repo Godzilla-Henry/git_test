@@ -7,17 +7,14 @@ Vue.use(Vuex, VueAxios, axios)
 
 export default new Vuex.Store({
   state: {
-    test: 'test data'
+    api: "https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json",
   },
   mutations: {
-		TEST(state, status) {      //status -> payload （載荷）
-			state.test = status;
-		}
 	},
   actions: {
-		updateTest(context, status) {
-			context.commit('TEST', status)     // mutation 中定義方法
-		}
+		Get ({ commit }) {
+      return new axios.get(state.api)
+    }
 	},
   modules: {
   }

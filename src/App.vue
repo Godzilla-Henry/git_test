@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    {{test}}
-    <input type="text" v-model="test_local">
-    <button @click="changeHandler()"> 修改 </button>
+    {{data}}
   </div>
 </template>
 
@@ -12,19 +10,21 @@ export default {
   name: 'App',
   data(){
     return{
-      test_local:""
+      data: []
     }
   },
   methods:{
-    changeHandler() {
-      this.$store.dispatch('updateTest',this.test_local)
+    loadHandler() {
+      this.$store.dispatch('Get').then((res) => {
+        res.data.forEach(el => {
+          data.push(el);
+        });
+      })
     }
   },
-  computed: {
-    test () {
-      return this.$store.state.test
-    }
-  }
+  created(){
+    this.loadHandler();
+  },
 }
 </script>
 
