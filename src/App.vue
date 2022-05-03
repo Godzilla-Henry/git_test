@@ -17,7 +17,7 @@ export default {
   },
   methods:{
     changeHandler() {
-      this.$store.dispatch('updateTest',test_local)
+      this.$store.dispatch('updateTest',this.test_local)
     }
   },
   computed: {
