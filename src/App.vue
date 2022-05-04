@@ -15,7 +15,7 @@ export default {
   },
   methods:{
     loadHandler() {
-      this.$store.dispatch('Get').then((res) => {
+      this.$store.dispatch('Get','').then((res) => {
         console.log(res);
       })
     }
