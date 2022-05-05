@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    {{data}}
   </div>
 </template>
 
@@ -10,18 +9,7 @@ export default {
   name: 'App',
   data(){
     return{
-      data: []
     }
-  },
-  methods:{
-    loadHandler() {
-      this.$store.dispatch('Get','').then((res) => {
-        console.log(res);
-      })
-    }
-  },
-  created(){
-    this.loadHandler();
   },
 }
 </script>

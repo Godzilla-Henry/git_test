@@ -6,19 +6,12 @@ import VueAxios from 'vue-axios'
 Vue.use(Vuex, VueAxios, axios)
 
 export default new Vuex.Store({
-  state: {
-    api: "https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json",
-  },
-  actions: {
-		Get(context, url) {
-			context.commit('GetApi', url)
-		}
+	state: {
+	},
+	actions: {
 	},
 	mutations: {
-		GetApi(state, url) {
-			return axios.get(state.api)
-		}
 	},
-  modules: {
-  }
+	modules: {
+	}
 })
