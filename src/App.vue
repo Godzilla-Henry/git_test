@@ -18,9 +18,16 @@ export default {
   },
   methods:{
     async FetchApi(){
+      let time_start = new Date(); 
       await axios.get("https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json")
       .then(res => {
-        console.log(res.data)
+        let time_end = new Date();
+        let api_time = time_end - time_start ; // api cost
+        let max_time = Math.max(api_time, 2000);
+        let waiting_time = max_time - api_time;
+        setTimeout(() => {
+            this.api_data = res.data
+        }, waiting_time);
       })
     }
   }
